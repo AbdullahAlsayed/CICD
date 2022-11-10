@@ -1,10 +1,8 @@
 # Script to train machine learning model.
-
-
-import pandas as pd
 import pickle as pkl
+import pandas as pd
 from sklearn.model_selection import train_test_split
-from ml.data import process_data
+import ml.data as impd
 from ml.model import (
     train_model,
     compute_model_metrics,
@@ -32,7 +30,7 @@ cat_features = [
     "sex",
     "native-country",
 ]
-X_train, y_train, encoder, lb = process_data(
+X_train, y_train, encoder, lb = impd.process_data(
 #    train, categorical_features=cat_features, label="salary", training=True
     data,categorical_features=cat_features, label="salary", training=True
 )
