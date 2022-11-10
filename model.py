@@ -122,7 +122,7 @@ def evaluate_with_feature_fixed(model, train_data, fixed_metric, cat_features, e
                 label="salary",
                 training=False,
                 encoder=encoder,
-                label_bin=label_binarizer
+                lb=label_binarizer
             )
             predictions=inference(model, data_processed)
             precision,recall,fbeta = compute_model_metrics(labels_processed, predictions)

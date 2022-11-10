@@ -46,7 +46,7 @@ print(
 )
 
 
-best = metrics_df.loc[metrics_df["f1"].idmax()]
+best = metrics_df.loc[metrics_df["f1"].idxmax()]
 print("Best row is:")
 print(
     f"random_state: {best['random_state']},"
@@ -69,7 +69,7 @@ model=train_model(train_data,train_labels)
 
 fixed_features = ["education", "occupation"]
 for feature in fixed_features:
-    evaluate_with_featire_fixed(model,data,feature,cat_features,encoder,lb)
+    evaluate_with_feature_fixed(model,data,feature,cat_features,encoder,lb)
 
 predictions=model.predict(test_data)
 precision,recall,fbeta = compute_model_metrics(test_labels,predictions)
