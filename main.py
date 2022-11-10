@@ -80,7 +80,7 @@ def welcome():
     """
     This is the welcoming message
     """
-    return {"message": "Welcome to the starter project"}
+    return {"message": "Welcome to the project"}
 
 
 @app.post("/predict", response_model=DataOut, status_code=200)
