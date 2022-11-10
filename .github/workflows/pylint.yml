@@ -23,10 +23,11 @@ jobs:
         aws-region: us-east-1
     
     - name: setup DVC to pull data
-    - uses: iterative/setup-dvc@v1
+      uses: iterative/setup-dvc@v1
     
     - name: DVC Pull
       run : |
+        dvc init
         dvc pull
     
     - name: Install dependencies
