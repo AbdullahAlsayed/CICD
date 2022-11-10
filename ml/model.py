@@ -119,7 +119,7 @@ def evaluate_with_feature_fixed(model, train_data, fixed_metric, cat_features, e
             data_processed, labels_processed, encoder, label_binarizer = process_data(
                 metric_fixed_df,
                 categorical_features=cat_features,
-                label="salary"
+                label="salary",
                 training=False,
                 encoder=encoder,
                 label_bin=label_binarizer
