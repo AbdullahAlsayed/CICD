@@ -77,7 +77,7 @@ def train_and_test_on_slices(train,test,test_size_def=.2):
         )
         model=train_model(train_data,train_label)
         predictions=model.predict(test_data)
-        precision,recall,fbeta = compute_model_metrics(test_data,predictions)
+        precision,recall,fbeta = compute_model_metrics(test_label,predictions)
         print_metrics(precision, recall, fbeta, model.score(test_data,test_label))
         metrics.append(
             [
