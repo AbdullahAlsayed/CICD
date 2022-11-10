@@ -28,7 +28,6 @@ jobs:
     - name: DVC Pull
       run : |
         dvc init 
-        # dvc pull
     
     - name: Install dependencies
       run: |
