@@ -1,8 +1,9 @@
 # Script to train machine learning model.
 
-from sklearn.model_selection import train_test_split
+
 import pandas as pd
 import pickle as pkl
+from sklearn.model_selection import train_test_split
 from ml.data import process_data
 from ml.model import (
     train_model,
@@ -66,14 +67,14 @@ train_data, test_data,train_labels, test_labels = train_test_split(
     X_train,y_train,test_size=test_size,random_state=random_state,
 )
 
-model=train_model(train_date,train_labels)
+model=train_model(train_data,train_labels)
 
 fixed_features = ["education", "occupation"]
 for feature in fixed_features:
     evaluate_with_featire_fixed(model,data,feature,cat_features,encoder,lb)
 
 predictions=model.predict(test_data)
-precision,recallmfbeta = compute_model_metrics(test_labels,predictions)
+precision,recall,fbeta = compute_model_metrics(test_labels,predictions)
 print_metrics(precision,recall,fbeta,model.score(test_data,test_labels))
 f_metrics=pd.DataFrame(
     [[precision, recall, fbeta, model.score(test_data, test_labels)]],
