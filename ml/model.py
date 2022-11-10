@@ -115,7 +115,7 @@ def evaluate_with_feature_fixed(model, train_data, fixed_metric, cat_features, e
         for fixed_slice in unique_values:
             file.write(fixed_slice)
             file.write("\n")
-            mi]etric_fixed_df = train_data.loc[train_data.loc[:, fixed_metric] == fixed_slice, :]
+            metric_fixed_df = train_data.loc[train_data.loc[:, fixed_metric] == fixed_slice, :]
             data_processed, labels_processed, encoder, label_binarizer = process_data(
                 metric_fixed_df,
                 categorical_features=cat_features,
