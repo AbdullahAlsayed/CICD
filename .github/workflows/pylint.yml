@@ -23,8 +23,8 @@ jobs:
         aws-region: us-east-1
     
     - name: setup DVC to pull data
-    - uses: actions/checkout@v2
     - uses: iterative/setup-dvc@v1
+    
     - name: DVC Pull
       run : |
         dvc pull
