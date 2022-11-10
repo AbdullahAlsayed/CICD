@@ -2,8 +2,8 @@
 import pickle as pkl
 import pandas as pd
 from sklearn.model_selection import train_test_split
-import ml.data as impd
-from ml.model import (
+import data as impd
+from model import (
     train_model,
     compute_model_metrics,
     train_and_test_on_slices,
