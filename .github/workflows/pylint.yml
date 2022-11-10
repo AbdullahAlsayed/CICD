@@ -38,9 +38,9 @@ jobs:
         pip install pylint
         pip install -r requirements.txt
     
-    #- name: Analysing the code with pylint
-    #  run: |
-    #    pylint -d duplicate-code $(git ls-files '*.py')
+    - name: Analysing the code with pylint
+      run: |
+        python -m pylint -d duplicate-code $(git ls-files '*.py')
     
     - name: Install flake and pytest dependencies
       run: |
