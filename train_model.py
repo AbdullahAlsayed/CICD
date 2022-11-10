@@ -8,7 +8,7 @@ from model import (
     compute_model_metrics,
     train_and_test_on_slices,
     print_metrics,
-    evaluate_with_featire_fixed,
+    evaluate_with_feature_fixed,
 )
 
 # Add the necessary imports for the starter code.
