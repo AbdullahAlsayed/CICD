@@ -19,7 +19,7 @@ data = {
 }
 
 # request a response from the API using FastAPI
-response = requests.post(URL, json=data, timeout=5)
+response = requests.post(URL, json=data, timeout=120)
 
 # print the response
 print(f"response.status_code: {response.status_code}")
