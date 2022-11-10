@@ -1,6 +1,6 @@
 import requests
 
-URL = "https://testudacitymlopsp3.herokuapp.com/"
+URL = "https://testudacitymlopsp3.herokuapp.com/predict"
 data = {
     "age": 40,
     "workclass": "Private",
