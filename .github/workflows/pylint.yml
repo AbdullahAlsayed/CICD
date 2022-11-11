@@ -25,9 +25,6 @@ jobs:
     - name: setup DVC to pull data
       uses: iterative/setup-dvc@v1
     
-    - name: DVC Init
-      run : |
-        dvc init
     - name: DVC Pull
       run : |
         dvc pull
@@ -35,12 +32,7 @@ jobs:
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
-        pip install pylint
         pip install -r requirements.txt
-    
-    #- name: Analysing the code with pylint
-    #  run: |
-    #    python -m pylint -d duplicate-code $(git ls-files '*.py')
     
     - name: Install flake and pytest dependencies
       run: |
