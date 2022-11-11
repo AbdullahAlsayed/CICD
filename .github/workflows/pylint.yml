@@ -25,6 +25,10 @@ jobs:
     - name: setup DVC to pull data
       uses: iterative/setup-dvc@v1
     
+    - name: DVC Init
+      run : |
+        dvc init
+    
     - name: DVC Pull
       run : |
         dvc pull
