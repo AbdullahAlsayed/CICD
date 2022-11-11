@@ -84,7 +84,7 @@ def welcome():
 
 
 @app.post("/predict", response_model=DataOut, status_code=200)
-def get_prediction(cencus: DataIn):
+def get_pred(cencus: DataIn):
     """
     This function performs the inference
     """
