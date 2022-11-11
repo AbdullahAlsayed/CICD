@@ -24,6 +24,8 @@ _Please include the metrics used and your model's performance on those metrics._
 metrics used are precision: 0.75, recall: 0.63, f1: 0.69, accuracy: 0.86
 
 ## Ethical Considerations
-The environment has changed a lot since 1994 -data collection date- so it's not that much accurate to depend on this data 
+There is no Ethical considerations as per my point of view
 
 ## Caveats and Recommendations
+The environment has changed a lot since 1994 -data collection date- so it's not that much accurate to depend on this data
+It might be good to try using more models trials looking for better results
