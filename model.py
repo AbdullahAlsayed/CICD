@@ -66,6 +66,13 @@ def inference(model, X):
     return preds
     
 def train_and_test_on_slices(train,test,test_size_def=.2):
+    """
+    function that get the performance of the model on slices of data
+    Inputs:
+        train (pd.DataFrame): The features
+        test (pd.Series): The labels
+    
+    """
     metrics=[]
     for i in range(10):
         print(f"slice {i}:")
@@ -97,12 +104,37 @@ def train_and_test_on_slices(train,test,test_size_def=.2):
     return metrics_df, metrics_mean
     
 def print_metrics(precision, recall, fbeta, accuracy):
+    """
+    Function to print metrics
+    Inputs
+        Precision
+        Recall
+        fbeta
+        accuracy
+    """
     print(f"Precision: {round(precision, 2)}")
     print(f"Recall: {round(recall, 2)}")
     print(f"F1: {round(fbeta, 2)}")
     print(f"Accuracy: {round(accuracy, 2)}")
     
 def evaluate_with_feature_fixed(model, train_data, fixed_metric, cat_features, encoder, label_binarizer):
+    """
+    Function to compute the performance metrics when
+    the value of a given feature is fixed
+    Inputs
+    ------
+    model : ML model
+        Trained machine learning model.
+    train_data: pd.DataFrame
+        The data to be used for evaluation
+    fixed_metric : str
+        The name of the feature to be held fixed
+    cat_features : 
+    encoder : sklearn.preprocessing.OneHotEncoder
+        The encoder used to encode the categorical features
+    label_binarizer :  sklearn.preprocessing.LabelBinarizer
+        The label binarizer used to binarize the labels
+    """
     unique_values = train_data[fixed_metric].unique()
     
     with open(f"Sliced_output_{fixed_metric}.txt", "w", encoding="utf-8") as file:
